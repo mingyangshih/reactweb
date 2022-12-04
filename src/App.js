@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import ItemDetail from "./components/ItemDetail";
+import { Route, Routes } from 'react-router-dom'
+import Header from "./components/Header";
+// import Form from "./components/Form";
+import { Fragment } from "react";
+
+import PageHome from './components/PageHome'
+import PageNews from './components/PageNews'
+import PageAbout from './components/PageAbout'
 
 function App() {
+  // const appData = {
+  //   accessKeyId: "abcde",
+  //   secretAccessKey: "12345",
+  //   regionID: "JP"
+  // };
+  // const handlerAppDataEvent = (appdata) => {
+  //   console.log(appdata);
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+        <Header />
+        <div className="p-4">
+          <Routes>
+            <Route path="/"  element={<PageHome/>}>
+              {/* <PageHome></PageHome> */}
+            </Route>
+            <Route path="/news" element={<PageNews/>}>
+              {/* <PageNews></PageNews> */}
+            </Route>
+            <Route path="/about" element={<PageAbout/>}>
+              {/* <PageAbout></PageAbout> */}
+            </Route>
+          </Routes>
+        </div>
+      {/* <Form appData={appData} onSave={handlerAppDataEvent} /> */}
+    </Fragment>
   );
 }
-
 export default App;
