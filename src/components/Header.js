@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -8,8 +9,11 @@ const Header = () => {
         <span className="fs-5 ps-2">Clayton Learn React</span>
       </div>
       <div>
-        <button className="btn btn-primary btn-sm mx-1">Login</button>
-        <button className="btn btn-danger btn-sm mx-1">Logout</button>
+        {/* <button className="btn btn-primary btn-sm mx-1">Login</button>
+        <button className="btn btn-danger btn-sm mx-1">Logout</button> */}
+        <NavLink to="/" className="text-decoration-none px-1 text-light"  exact="true"> Home</NavLink>
+        <NavLink to="/news" className="text-decoration-none px-1 text-light" > News</NavLink>
+        <NavLink to="/about" className="text-decoration-none px-1 text-light" > About</NavLink>
       </div>
     </div>
   );
