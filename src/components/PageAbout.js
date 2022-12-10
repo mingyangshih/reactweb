@@ -1,8 +1,13 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
+import {Context} from '../App';
 const PageAbout = () => {
-  return (
-    <h1>PageAbout</h1>
-  )
-}
-export default PageAbout
+    const context = useContext(Context);
+    return (
+        <div>
+            <h1>PageAbout</h1>
+            <div>{context.siteName}</div>
+            <div>{context.author}</div>
+        </div>
+    );
+};
+export default PageAbout;
